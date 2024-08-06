@@ -1,0 +1,6 @@
+<p>list-product!</p>
+<div id="product-container">
+  @for (prod of this.storeService.products; track $index) {
+    <app-product-card [routerLink]="['/product',prod.id]" [product]="prod" ></app-product-card>
+  }
+</div>
