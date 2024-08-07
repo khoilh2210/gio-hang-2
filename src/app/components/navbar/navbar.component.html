@@ -1,8 +1,19 @@
-<div id="container">
-  @if (authService.currentUser){
-    <img [src]="authService.currentUser.photoURL">
-  }
+<nav>
+  <ul>
+    <li><h2 [routerLink]="['/home']">Home</h2></li>
+    <li><h2 [routerLink]="['/products']">Products</h2></li>
+    <li><h2 [routerLink]="['/cart']">Cart</h2></li>
+    <li>
+      <div id="userBox">
+        @if (authService.currentUser) {
+          <img [src]="authService.currentUser.photoURL">
+          <label>{{authService.currentUser.displayName}}</label>
+        }
+      </div>
+      <button (click)="this.authService.login()" id="signin">Sign in</button>
+      <button (click)="this.storeService.deleteAllFromCart();this.authService.logout()" id="signout">Sign out</button>
+    </li>
 
-  <button [routerLink]="['/home']">Home</button>
-  <button [routerLink]="['/products']">Product</button>
-</div>
+  </ul>
+
+</nav>

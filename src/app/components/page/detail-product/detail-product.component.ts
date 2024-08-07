@@ -4,6 +4,7 @@ import {Product} from "../../../models/product.model";
 import {StoreService} from "../../../services/store.service";
 
 
+
 @Component({
   selector: 'app-detail-product',
   standalone: true,
@@ -19,4 +20,5 @@ export class DetailProductComponent {
     this.detailProduct = this.storeService.products.find((element : Product) : boolean => element.id == parseInt(id));
     console.log(this.detailProduct);
   }
+
 }

@@ -13,5 +13,6 @@ export class ProductCardComponent {
   @Input() product!: Product;
 
   constructor(public storeService: StoreService) {
+    console.log(this.storeService.cart);
   }
 }

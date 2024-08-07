@@ -1,29 +1,19 @@
-<h1>day la trang chi tiet</h1>
-
-
-
-<div id="container">
-  <div id="content-container">
-    <div id="left-content">
-      <h1>day la trang chi tiet</h1>
-      <div id="detail-container">
-        <img [src]="detailProduct?.imageUrl">
-        <h2>{{detailProduct?.name}}</h2>
-        <h3>{{detailProduct?.price}}</h3>
-        <p>{{detailProduct?.inStock}}</p>
-        <button (click)="this.storeService.addToCart({
-          id: detailProduct?.id,
-          name: detailProduct?.name,
-          price: detailProduct?.price,
-          quantity: 1,
-        })">Add</button>
-      </div>
-    </div>
-    <div id="middle-content">
-      <div class="middle-content-top"></div>
-      <div class="middle-content-mid"></div>
-      <div class="middle-content-bot"></div>
-    </div>
-    <div id="right-content"></div>
+<div class="product-detail">
+  <div class="product-image">
+    <img src="{{detailProduct?.imageUrl}}" alt="{{detailProduct?.name}}">
+  </div>
+  <div class="product-info">
+    <h1>{{ detailProduct?.name}}</h1>
+    <p class="price">{{ detailProduct?.price }} VND</p>
+    <p class="quantity">Available: {{ detailProduct?.quantity }}</p>
+    <button (click)="this.storeService.addToCart({
+       id: detailProduct?.id,
+       name: detailProduct?.name,
+       price: detailProduct?.price,
+       quantity: 1,
+     })">Add</button>
   </div>
 </div>
+
+
+
